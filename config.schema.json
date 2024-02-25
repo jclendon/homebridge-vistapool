@@ -1,68 +1,63 @@
 {
-  "accessories": [],
-  "platforms": [
+  "platform": "VistapoolPlatform",
+  "name": "Vistapool",
+  "apiUrl": "http://vistapool.es/api/pool",
+  "username": "your_username_here",
+  "password": "your_password_here",
+  "devices": [
     {
-      "platform": "VistapoolPlatform",
-      "name": "Vistapool",
-      "apiUrl": "http://vistapool.es/api/pool",
-      "username": "your_username_here",
-      "password": "your_password_here",
-      "devices": [
+      "deviceId": "pool-heater",
+      "name": "Pool Heater",
+      "type": "Heater",
+      "temperature": {
+        "current": 0,
+        "target": 28
+      }
+    },
+    {
+      "deviceId": "pool-light",
+      "name": "Pool Light",
+      "type": "Light",
+      "status": "off"
+    },
+    {
+      "deviceId": "pool-filtration",
+      "name": "Pool Filtration System",
+      "type": "Filtration",
+      "filtrationType": "Sand",
+      "filtrationState": "off",
+      "schedule": [
         {
-          "deviceId": "pool-heater-1",
-          "name": "Pool Heater",
-          "type": "Heater",
-          "temperature": {
-            "current": 0,
-            "target": 28
-          }
+          "start": "08:00",
+          "end": "10:00"
         },
         {
-          "deviceId": "pool-light-1",
-          "name": "Pool Light",
-          "type": "Light",
-          "status": "off"
-        },
-        {
-          "deviceId": "pool-filtration-1",
-          "name": "Pool Filtration System",
-          "type": "Filtration",
-          "filtrationType": "Sand",
-          "filtrationState": "off",
-          "schedule": [
-            {
-              "start": "08:00",
-              "end": "10:00"
-            },
-            {
-              "start": "14:00",
-              "end": "16:00"
-            }
-          ]
-        },
-        {
-          "deviceId": "pool-ph-controller-1",
-          "name": "PH Controller",
-          "type": "PHController",
-          "ph": {
-            "currentValue": 7.2,
-            "targetValue": 7.4,
-            "relayState": "off",
-            "color": "#00FF00"
-          }
-        },
-        {
-          "deviceId": "pool-rx-controller-1",
-          "name": "RX Controller",
-          "type": "RXController",
-          "rx": {
-            "currentValue": 650,
-            "targetValue": 700,
-            "relayState": "off",
-            "color": "#FF0000"
-          }
+          "start": "14:00",
+          "end": "16:00"
         }
       ]
+    },
+    {
+      "deviceId": "pool-ph-controller",
+      "name": "PH Controller",
+      "type": "PHController",
+      "ph": {
+        "currentValue": 7.2,
+        "targetValue": 7.4,
+        "relayState": "off",
+        "color": "#00FF00"
+      }
+    },
+    {
+      "deviceId": "pool-rx-controller",
+      "name": "RX Controller",
+      "type": "RXController",
+      "rx": {
+        "currentValue": 650,
+        "targetValue": 700,
+        "relayState": "off",
+        "color": "#FF0000"
+      }
     }
   ]
 }
