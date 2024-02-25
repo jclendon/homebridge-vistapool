@@ -10,7 +10,7 @@
     {
       "platform": "VistapoolPlatform",
       "name": "Vistapool",
-      "apiUrl": "http://vistapool.example.com/api",
+      "apiUrl": "http://vistapool.es/api/pool",
       "username": "your_username_here",
       "password": "your_password_here",
       "devices": [
