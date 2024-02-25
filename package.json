@@ -2,7 +2,7 @@
   "private": false,
   "displayName": "Vistapool",
   "name": "homebridge-vistapool",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A Homebridge plugin for Vistapool devices.",
   "main": "index.js",
   "scripts": {
