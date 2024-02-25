@@ -103,10 +103,10 @@ class VistapoolAccessory {
   }
 
   private async fetchLightStatus() {
-  try {
-    const response = await axios.get(`${this.platform.config.apiUrl}/lightStatus`, {
+    try {
+      const response = await axios.get(`${this.platform.config.apiUrl}/lightStatus`, {
       auth: { username: this.platform.config.username, password: this.platform.config.password },
-    });
+      });
     // Update the HomeKit characteristic for light status
     } catch (error) {
       this.platform.log.error('Error fetching light status from Vistapool API:', error);
@@ -124,7 +124,7 @@ class VistapoolAccessory {
   private async fetchRXLevel() {
   // Similar implementation to fetchLightStatus, tailored for RX data
   }
-  
+
   // Additional methods for interacting with the Vistapool API for other functionalities...
 }
 
