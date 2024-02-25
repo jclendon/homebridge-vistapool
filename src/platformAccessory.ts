@@ -105,7 +105,7 @@ class VistapoolAccessory {
   private async fetchLightStatus() {
     try {
       const response = await axios.get(`${this.platform.config.apiUrl}/lightStatus`, {
-      auth: { username: this.platform.config.username, password: this.platform.config.password },
+        auth: { username: this.platform.config.username, password: this.platform.config.password },
       });
     // Update the HomeKit characteristic for light status
     } catch (error) {
