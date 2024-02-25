@@ -1,4 +1,4 @@
-import { PlatformAccessory, Service, CharacteristicGetCallback, CharacteristicSetCallback } from 'homebridge';
+import { PlatformAccessory, Service, CharacteristicGetCallback, CharacteristicSetCallback, Logger } from 'homebridge';
 import axios from 'axios';
 import VistapoolPlatform from './platform';
 
@@ -43,10 +43,10 @@ class VistapoolAccessory {
   private deviceData: VistapoolDeviceData;
 
   constructor(
+    private readonly logger: Logger, // Add logger parameter
     private readonly platform: VistapoolPlatform,
     private readonly accessory: PlatformAccessory,
-    deviceConfig: VistapoolDeviceData, // Use the specific type here
-    logger: Logger, // Add logger parameter
+    private readonly deviceConfig: VistapoolDeviceData, // Use the specific type here
   ) {
     this.deviceData = accessory.context.device;
     this.logger = logger; // Initialize the logger
