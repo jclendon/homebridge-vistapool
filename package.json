@@ -1,5 +1,5 @@
 {
-  "displayName": "Plugin Name",
+  "displayName": "Homebridge Vistapool Plugin",
   "name": "homebridge-vistapool",
   "version": "0.0.1",
   "description": "A Homebridge plugin for Vistapool devices.",
