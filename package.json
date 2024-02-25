@@ -12,7 +12,7 @@
     "build": "rimraf ./dist && tsc",
     "prepublishOnly": "npm run lint && npm run build"
   },
-  "author": "James Clendon",
+  "author": "jclendon",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
