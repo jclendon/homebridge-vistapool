@@ -1,5 +1,5 @@
 {
-  "platform": "VistapoolPlugin",
+  "platform": "Vistapool",
   "name": "Vistapool",
   "apiUrl": "http://vistapool.es/api/pool",
   "username": "your_username_here",
