@@ -102,5 +102,4 @@ class VistapoolAccessory {
     // Additional methods for interacting with the Vistapool API for other functionalities...
 }
 
-export = VistapoolAccessory;
-
+export default VistapoolAccessory;
