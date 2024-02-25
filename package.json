@@ -1,5 +1,4 @@
 {
-  "private": true,
   "displayName": "Plugin Name",
   "name": "homebridge-vistapool",
   "version": "0.0.1",
