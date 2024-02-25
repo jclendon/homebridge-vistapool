@@ -67,6 +67,8 @@ class VistapoolAPI {
         throw new Error('Temperature data not found');
       }
     } catch (error) {
+      // Log the error and throw an exception to indicate failure
+      // eslint-disable-next-line no-console
       console.error('Failed to fetch temperature:', error);
       throw new Error('Error fetching temperature data');
     }
@@ -88,6 +90,7 @@ class VistapoolAPI {
         throw new Error('Filtration data not found');
       }
     } catch (error) {
+      // Log the error and throw an exception to indicate failure
       // eslint-disable-next-line no-console
       console.error('Failed to fetch filtration status:', error);
       throw new Error('Error fetching filtration status');
@@ -110,6 +113,7 @@ class VistapoolAPI {
         throw new Error('Light data not found');
       }
     } catch (error) {
+      // Log the error and throw an exception to indicate failure
       // eslint-disable-next-line no-console
       console.error('Failed to fetch light status:', error);
       throw new Error('Error fetching light status');
@@ -133,8 +137,8 @@ class VistapoolAPI {
         throw new Error('PH data not found');
       }
     } catch (error) {
-      // eslint-disable-next-line no-console
       // Log the error and throw an exception to indicate failure
+      // eslint-disable-next-line no-console
       console.error('Failed to fetch PH status:', error);
       throw new Error('Error fetching PH status');
     }
@@ -157,6 +161,7 @@ class VistapoolAPI {
         throw new Error('RX data not found');
       }
     } catch (error) {
+      // Log the error and throw an exception to indicate failure
       // eslint-disable-next-line no-console
       console.error('Failed to fetch RX status:', error);
       throw new Error('Error fetching RX status');
