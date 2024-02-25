@@ -39,8 +39,8 @@ interface VistapoolDeviceData {
 }
 
 class VistapoolAccessory {
-    private deviceData: VistapoolDeviceData;
-
+	private deviceData: VistapoolDeviceData;
+	
 	constructor(
 			private readonly platform: VistapoolPlatform,
 			private readonly accessory: PlatformAccessory,
