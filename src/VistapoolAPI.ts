@@ -1,49 +1,9 @@
 import axios, { AxiosInstance } from 'axios';
 
+// Interfaces definition
 interface VistapoolDeviceData {
-    // Define properties based on Python code
+  // Define properties based on Python code
 }
-
-class VistapoolAPI {
-    private axiosInstance: AxiosInstance;
-    private token: string | null = null;
-
-    constructor(private baseUrl: string, private username: string, private password: string) {
-        this.axiosInstance = axios.create({
-            baseURL: baseUrl,
-        });
-    }
-
-    async login(): Promise<void> {
-        const response = await this.axiosInstance.post('/auth', {
-            username: this.username,
-            password: this.password,
-            company_id: 1, // Adjust as necessary
-        });
-        this.token = response.data; // Update based on actual response structure
-    }
-
-    async getPoolInformation(): Promise<VistapoolDeviceData> {
-        this.ensureLoggedIn();
-        const response = await this.axiosInstance.get('/pool', {
-            headers: { Authorization: `Bearer ${this.token}` },
-        });
-        // Parse and return data
-        return response.data; // Adjust based on actual response structure
-    }
-
-    private ensureLoggedIn() {
-        if (!this.token) {
-            throw new Error('Not logged in');
-        }
-    }
-
-    // Additional methods for fetching and updating device states
-}
-
-export { VistapoolAPI, VistapoolDeviceData };
-
-// Define interfaces for expected API response structures
 interface TemperatureData { /* ... */ }
 interface FiltrationData { /* ... */ }
 interface LightData { /* ... */ }
@@ -51,43 +11,64 @@ interface PHData { /* ... */ }
 interface RXData { /* ... */ }
 
 class VistapoolAPI {
-    // Existing properties and constructor
+  private axiosInstance: AxiosInstance;
+  private token: string | null = null;
 
-    async getTemperature(): Promise<TemperatureData> {
-        // Fetch temperature data
-    }
+  constructor(private baseUrl: string, private username: string, private password: string) {
+    this.axiosInstance = axios.create({ baseURL: baseUrl });
+  }
 
-    async setTemperature(temp: number): Promise<void> {
-        // Update temperature setting
-    }
+  async login(): Promise<void> {
+    const response = await this.axiosInstance.post('/auth', {
+      username: this.username,
+      password: this.password,
+      company_id: 1, // Adjust as necessary
+    });
+    this.token = response.data.token; // Assuming the token is directly in response.data
+    this.axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${this.token}`;
+  }
 
-    async getFiltrationStatus(): Promise<FiltrationData> {
-        // Fetch filtration status
-    }
+  async getTemperature(): Promise<TemperatureData> {
+    // Implementation...
+  }
 
-    async setFiltrationStatus(on: boolean): Promise<void> {
-        // Update filtration status
-    }
-  
-    async getLightStatus(): Promise<FiltrationData> {
-        // Fetch filtration status
-    }
+  async setTemperature(data: TemperatureData): Promise<void> {
+    // Implementation...
+  }
 
-    async setLightStatus(on: boolean): Promise<void> {
-        // Update filtration status
-    }
-  
-    async getPHStatus(): Promise<FiltrationData> {
-        // Fetch filtration status
-    }
-    async setPHStatus(on: boolean): Promise<void> {
-        // Update filtration status
-    }
+  async getFiltrationStatus(): Promise<FiltrationData> {
+    // Implementation...
+  }
 
-    async getRXStatus(): Promise<FiltrationData> {
-        // Fetch filtration status
-    }
-    async setRXStatus(on: boolean): Promise<void> {
-        // Update filtration status
-    }
+  async setFiltrationStatus(status: boolean): Promise<void> {
+    // Implementation...
+  }
+
+  async getLightStatus(): Promise<LightData> {
+    // Implementation...
+  }
+
+  async setLightStatus(status: boolean): Promise<void> {
+    // Implementation...
+  }
+
+  async getPHStatus(): Promise<PHData> {
+    // Implementation...
+  }
+
+  async setPHStatus(data: PHData): Promise<void> {
+    // Implementation...
+  }
+
+  async getRXStatus(): Promise<RXData> {
+    // Implementation...
+  }
+
+  async setRXStatus(data: RXData): Promise<void> {
+    // Implementation...
+  }
+
+  // Additional methods as necessary...
 }
+
+export { VistapoolAPI, VistapoolDeviceData, TemperatureData, FiltrationData, LightData, PHData, RXData };
