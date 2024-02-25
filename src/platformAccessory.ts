@@ -39,17 +39,17 @@ interface VistapoolDeviceData {
 }
 
 class VistapoolAccessory {
-  private logger: Logger;
-  private deviceData: VistapoolDeviceData;
+  private readonly logger: Logger;
+  private readonly deviceConfig: VistapoolDeviceData;
 
   constructor(
-    private readonly logger: Logger, // Add logger parameter
+    logger: Logger, // Add logger parameter
     private readonly platform: VistapoolPlatform,
     private readonly accessory: PlatformAccessory,
-    private readonly deviceConfig: VistapoolDeviceData, // Use the specific type here
+    deviceConfig: VistapoolDeviceData, // Use the specific type here
   ) {
-    this.deviceData = accessory.context.device;
     this.logger = logger; // Initialize the logger
+    this.deviceConfig = deviceConfig;
     // Initialize services based on available data types
     this.initializeServices();
   }
