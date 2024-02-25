@@ -44,6 +44,7 @@ class VistapoolAccessory {
     constructor(
         private readonly platform: VistapoolPlatform,
         private readonly accessory: PlatformAccessory,
+        private readonly deviceConfig: any // Assuming 'any' type; specify a more precise type if available
     ) {
         this.deviceData = accessory.context.device;
         // Initialize services based on available data types
