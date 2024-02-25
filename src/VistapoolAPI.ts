@@ -2,13 +2,40 @@ import axios, { AxiosInstance } from 'axios';
 
 // Interfaces definition
 interface VistapoolDeviceData {
-  // Define properties based on Python code
+  temperature: TemperatureData;
+  filtration: FiltrationData;
+  light: LightData;
+  ph: PHData;
+  rx: RXData;
 }
-interface TemperatureData { /* ... */ }
-interface FiltrationData { /* ... */ }
-interface LightData { /* ... */ }
-interface PHData { /* ... */ }
-interface RXData { /* ... */ }
+
+interface TemperatureData {
+  current: number;
+  target: number;
+}
+
+interface FiltrationData {
+  type: string; // e.g., "sand", "cartridge"
+  onoff: boolean;
+}
+
+interface LightData {
+  status: boolean;
+}
+
+interface PHData {
+  currentValue: number;
+  targetValue: number;
+  status: boolean; // True if within target range
+  color: string; // Hex code representing PH level
+}
+
+interface RXData {
+  currentValue: number;
+  targetValue: number;
+  status: boolean; // True if within target range
+  color: string; // Hex code representing RX level
+}
 
 class VistapoolAPI {
   private axiosInstance: AxiosInstance;
